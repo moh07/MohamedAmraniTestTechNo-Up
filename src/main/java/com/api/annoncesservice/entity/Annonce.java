@@ -13,7 +13,7 @@ import java.io.Serializable;
 
 @Entity
 @Data @NoArgsConstructor @AllArgsConstructor @ToString
-public class Announce implements Serializable {
+public class Annonce implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
