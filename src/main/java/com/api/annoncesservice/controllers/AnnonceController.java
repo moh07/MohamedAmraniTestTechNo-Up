@@ -35,8 +35,8 @@ public class AnnonceController {
         return annonceRepository.findAll();
     }
 
-    @GetMapping(value = "/getAnnonceById/{id}")
-    public Annonce getAnnonceById(@PathVariable(name="id") Long id){
+    @GetMapping(value = "/getAnnonceById")
+    public Annonce getAnnonceById(@RequestParam(name="id") Long id){
         return annonceRepository.findById(id).get();
     }
 
@@ -67,7 +67,6 @@ public class AnnonceController {
                 .path("/downloadFile/")
                 .path(fileName)
                 .toUriString();
-        System.out.println();
         return new UploadFileResponse(fileName, fileDownloadUri,
                 file.getContentType(), file.getSize());
     }
